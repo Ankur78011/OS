@@ -1,0 +1,34 @@
+#include <iostream>
+int tim=0;
+int main() {
+  int n,b[20],w[20],i,j,tw=0,taround[20],tt=0;
+  float avw,avt;
+  printf("enter number of processes=");
+  scanf("%d",&n);
+for(i=1;i<=n;i++)
+{printf("enter the burst timeof %dth process=",i);
+scanf("%d",&b[i]);
+}
+for(i=1;i<=n;i++)
+{ w[i]=tim;
+for(j=1;j<=b[i];j++)
+{tim++;
+if(j==b[i])
+taround[i]=tim;
+}
+}  
+
+for(i=1;i<=n;i++)
+{tw=tw+w[i];}
+ avw=(float)tw/n;
+ for(i=1;i<=n;i++)
+ {tt=tt+taround[i];}
+ avt=(float)tt/n;
+ printf("\n wating and turn around tiume");
+ printf("\n********************");
+ for(i=1;i<=n;i++)
+ {printf("\n process%d-wating=%d,trun around =%d",i,w[i],taround[i]);
+ }
+ printf("\n avg wating time=%f",avw);
+ printf("\n avg turn around time=%f\n",avt);
+}
